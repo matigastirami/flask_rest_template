@@ -7,6 +7,9 @@ name = "pypi"
 flask = "*"
 sqlalchemy = "*"
 psycopg2 = "*"
+redis = "*"
+flask-caching = "*"
+pylint = "*"
 
 [dev-packages]
 

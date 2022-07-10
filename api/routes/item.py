@@ -1,4 +1,4 @@
-from api import app
+from api import app, cache
 from api.services.item import (
     search_items_service, 
     create_item_service, 
@@ -9,6 +9,7 @@ from api.services.item import (
 from flask import jsonify, request
 
 @app.route('/items', methods=['GET'])
+@cache.cached(timeout=30, query_string=True)
 def search_items():
     items = search_items_service()
     return jsonify(items)
