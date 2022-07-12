@@ -53,3 +53,4 @@
 `flask-api enable-packages --sql`
 * Add logging
 * Add error handling
+* Add debug mode instructions for non-docker env
