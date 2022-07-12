@@ -2,8 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 import os
 
-from api.helpers.model_serializer import Serializer
-
 # For development purposes
 DEFAULT_CONNECTION_STRING = "sqlite+pysqlite:///:memory:?check_same_thread=False"
 
