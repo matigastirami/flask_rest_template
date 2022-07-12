@@ -34,17 +34,32 @@
 
 # Calling the API
 1. Open your favorite REST client
-2. GET http://localhost:80?name=yourname
+2. Start executing your requests. CURL examples:
+
+## Create an item
+```bash
+curl --location --request POST 'localhost:80/items' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "test",
+    "description": "test"
+}'
+```
+
+## Get all items
+```bash
+curl --location --request GET 'localhost:80/items'
+```
 
 # Technologies on this template
-* Python
-* Flask
-* SQLAlchemy
-* PostgreSQL
-* SQLite
-* RabbitMQ
-* MongoDB
-* Redis
+* [Python](https://docs.python.org/3/)
+* [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+* [SQLAlchemy](https://www.sqlalchemy.org/)
+* [PostgreSQL](https://www.postgresql.org/)
+* [SQLite](https://www.sqlite.org/index.html)
+* [RabbitMQ](https://www.rabbitmq.com/)
+* [MongoDB](https://www.mongodb.com/)
+* [Redis](https://redis.io/)
 
 # Pending
 * Enable a command to allow the user that desires to use this template, to create a project with the desired dependencies, this way avoiding the necessity to delete each of the unused packages. For example:
@@ -54,3 +69,9 @@
 * Add logging
 * Add error handling
 * Add debug mode instructions for non-docker env
+
+# VS Code troubleshooting
+* If dependencies show a message that couldn't be found, do:
+1. (CTRL/CMD) + SHIFT + P
+2. Look for `Python: Select interpreter` option
+3. On the dropdown select the venv related to the pipenv instance you are working
