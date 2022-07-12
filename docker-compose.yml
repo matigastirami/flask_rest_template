@@ -1,14 +1,17 @@
 version: '3.9'
 
 services:
-  pythonapp:
-    container_name: pythonapp
-    image: pythonapp
+  pythonapp_dev:
+    container_name: pythonapp_dev
+    image: pythonapp_dev
     build: .
     ports:
       - "80:80"
+      - "10001:10001"
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+      - FLASK_ENV=development
+      - DEBUGGER=True
       - FLASK_APP=api
       - CACHE_TYPE=redis
       - CACHE_REDIS_HOST=redis

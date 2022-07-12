@@ -23,8 +23,14 @@
 3. Set the FLASK_APP env variable: `export FLASK_APP=api` or `$env:FLASK_APP='api'` (Powershell)
 4 `pipenv run flask run --port=80` to run the app
 
-# Running docker-compose
-1. Open the terminal and execute `docker-compose up --build pythonapp`
+# Running docker-compose (Normal Mode)
+* Open the terminal and execute `docker-compose up --build pythonapp`
+
+# Running docker-compose (Debug Mode for VS Code)
+1. Add `- DEBUGGER=True` to docker-compose.yml in the `pythonapp_dev` environment 
+2. Open the terminal and execute `docker-compose up --build pythonapp`
+3. Press F5 when the terminal ask you for.
+4. Start adding breakpoints!
 
 # Calling the API
 1. Open your favorite REST client
