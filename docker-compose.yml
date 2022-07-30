@@ -23,6 +23,27 @@ services:
       - db
       - redis
 
+  pythonapp_prod:
+    container_name: pythonapp_prod
+    image: pythonapp_prod
+    build: .
+    ports:
+      - "80:80"
+      - "10001:10001"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+      - FLASK_ENV=development
+      - FLASK_APP=api
+      - CACHE_TYPE=redis
+      - CACHE_REDIS_HOST=redis
+      - CACHE_REDIS_PORT=6379
+      - CACHE_REDIS_DB=0
+      - CACHE_REDIS_URL=redis://redis:6379/0
+      - CACHE_DEFAULT_TIMEOUT=500
+    depends_on:
+      - db
+      - redis
+
   db:
     container_name: db
     image: postgres:12

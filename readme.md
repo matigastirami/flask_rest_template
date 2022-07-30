@@ -11,9 +11,9 @@
 * RabbitMQ connection and configuration (Pending)
 * Redis caching
 * Docker support
-* Hotreload for file changes (Via Flask debug option, only available when `FLASK_ENV=development`)
+* Hot- reload for file changes (Via Flask debug option, only available when `FLASK_ENV=development`)
 
-# What it does not includes
+# What it does not include
 * Error handling
 * Logging
 
@@ -69,6 +69,8 @@ curl --location --request GET 'localhost:80/items'
 * Add logging
 * Add error handling
 * Add debug mode instructions for non-docker env
+* Cookie cutter for project templating
+* Testing config and some test examples for both unit and api
 
 # VS Code troubleshooting
 * If dependencies show a message that couldn't be found, do:
